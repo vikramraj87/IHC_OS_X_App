@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5640591CFDD35000AC4836 /* AppDelegate.swift */; };
+		AC56405C1CFDD35000AC4836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56405B1CFDD35000AC4836 /* ViewController.swift */; };
+		AC56405E1CFDD35000AC4836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC56405D1CFDD35000AC4836 /* Assets.xcassets */; };
+		AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC56405F1CFDD35000AC4836 /* Main.storyboard */; };
+		AC56406C1CFDD35000AC4836 /* IHC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC5640681CFDD35000AC4836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC56404E1CFDD35000AC4836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC5640551CFDD35000AC4836;
+			remoteInfo = "IHC App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC5640561CFDD35000AC4836 /* IHC App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IHC App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5640591CFDD35000AC4836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC56405B1CFDD35000AC4836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC56405D1CFDD35000AC4836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC5640601CFDD35000AC4836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC5640621CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC5640671CFDD35000AC4836 /* IHC AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IHC AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHC_AppTests.swift; sourceTree = "<group>"; };
+		AC56406D1CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC5640531CFDD35000AC4836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC5640641CFDD35000AC4836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC56404D1CFDD35000AC4836 = {
+			isa = PBXGroup;
+			children = (
+				AC5640581CFDD35000AC4836 /* IHC App */,
+				AC56406A1CFDD35000AC4836 /* IHC AppTests */,
+				AC5640571CFDD35000AC4836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC5640571CFDD35000AC4836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC5640561CFDD35000AC4836 /* IHC App.app */,
+				AC5640671CFDD35000AC4836 /* IHC AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC5640581CFDD35000AC4836 /* IHC App */ = {
+			isa = PBXGroup;
+			children = (
+				AC5640591CFDD35000AC4836 /* AppDelegate.swift */,
+				AC56405B1CFDD35000AC4836 /* ViewController.swift */,
+				AC56405D1CFDD35000AC4836 /* Assets.xcassets */,
+				AC56405F1CFDD35000AC4836 /* Main.storyboard */,
+				AC5640621CFDD35000AC4836 /* Info.plist */,
+			);
+			path = "IHC App";
+			sourceTree = "<group>";
+		};
+		AC56406A1CFDD35000AC4836 /* IHC AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */,
+				AC56406D1CFDD35000AC4836 /* Info.plist */,
+			);
+			path = "IHC AppTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC5640551CFDD35000AC4836 /* IHC App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC5640701CFDD35000AC4836 /* Build configuration list for PBXNativeTarget "IHC App" */;
+			buildPhases = (
+				AC5640521CFDD35000AC4836 /* Sources */,
+				AC5640531CFDD35000AC4836 /* Frameworks */,
+				AC5640541CFDD35000AC4836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IHC App";
+			productName = "IHC App";
+			productReference = AC5640561CFDD35000AC4836 /* IHC App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC5640661CFDD35000AC4836 /* IHC AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC5640731CFDD35000AC4836 /* Build configuration list for PBXNativeTarget "IHC AppTests" */;
+			buildPhases = (
+				AC5640631CFDD35000AC4836 /* Sources */,
+				AC5640641CFDD35000AC4836 /* Frameworks */,
+				AC5640651CFDD35000AC4836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC5640691CFDD35000AC4836 /* PBXTargetDependency */,
+			);
+			name = "IHC AppTests";
+			productName = "IHC AppTests";
+			productReference = AC5640671CFDD35000AC4836 /* IHC AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC56404E1CFDD35000AC4836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Kivi;
+				TargetAttributes = {
+					AC5640551CFDD35000AC4836 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					AC5640661CFDD35000AC4836 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = AC5640551CFDD35000AC4836;
+					};
+				};
+			};
+			buildConfigurationList = AC5640511CFDD35000AC4836 /* Build configuration list for PBXProject "IHC App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC56404D1CFDD35000AC4836;
+			productRefGroup = AC5640571CFDD35000AC4836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC5640551CFDD35000AC4836 /* IHC App */,
+				AC5640661CFDD35000AC4836 /* IHC AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC5640541CFDD35000AC4836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC56405E1CFDD35000AC4836 /* Assets.xcassets in Resources */,
+				AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC5640651CFDD35000AC4836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC5640521CFDD35000AC4836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC56405C1CFDD35000AC4836 /* ViewController.swift in Sources */,
+				AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC5640631CFDD35000AC4836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC56406C1CFDD35000AC4836 /* IHC_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC5640691CFDD35000AC4836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC5640551CFDD35000AC4836 /* IHC App */;
+			targetProxy = AC5640681CFDD35000AC4836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC56405F1CFDD35000AC4836 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC5640601CFDD35000AC4836 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC56406E1CFDD35000AC4836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC56406F1CFDD35000AC4836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AC5640711CFDD35000AC4836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "IHC App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kivi.IHC-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AC5640721CFDD35000AC4836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "IHC App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kivi.IHC-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AC5640741CFDD35000AC4836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "IHC AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kivi.IHC-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IHC App.app/Contents/MacOS/IHC App";
+			};
+			name = Debug;
+		};
+		AC5640751CFDD35000AC4836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "IHC AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kivi.IHC-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IHC App.app/Contents/MacOS/IHC App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC5640511CFDD35000AC4836 /* Build configuration list for PBXProject "IHC App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC56406E1CFDD35000AC4836 /* Debug */,
+				AC56406F1CFDD35000AC4836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC5640701CFDD35000AC4836 /* Build configuration list for PBXNativeTarget "IHC App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC5640711CFDD35000AC4836 /* Debug */,
+				AC5640721CFDD35000AC4836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC5640731CFDD35000AC4836 /* Build configuration list for PBXNativeTarget "IHC AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC5640741CFDD35000AC4836 /* Debug */,
+				AC5640751CFDD35000AC4836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC56404E1CFDD35000AC4836 /* Project object */;
+}
