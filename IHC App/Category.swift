@@ -31,5 +31,31 @@ class Category: NSObject {
         super.init()
     }
     
+    func validateName(namePointer: AutoreleasingUnsafeMutablePointer<NSString?>, error outError: NSErrorPointer) -> Bool {
+        let nameValue = namePointer.memory
+        
+        guard var name = nameValue as? String else {
+            outError.memory = getInputValidationErrorWithCode(0, message: "Catergory name must be a non-nil String")
+            return false
+        }
+        
+        name = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        guard name.characters.count > 0 else {
+            outError.memory = getInputValidationErrorWithCode(0, message: "Category name must not be empty")
+            return false
+        }
+        
+        guard name.characters.count > 3 else {
+            outError.memory = getInputValidationErrorWithCode(0, message: "Category name must be atleast 4 characters long")
+            return false
+        }
+        
+        return true
+    }
     
+    private func getInputValidationErrorWithCode(code: Int, message: String) -> NSError {
+        let domain = "UserInputValidationErrorDomain"
+        let userInfo = [NSLocalizedDescriptionKey: message]
+        return NSError(domain: domain, code: code, userInfo: userInfo)
+    }
 }

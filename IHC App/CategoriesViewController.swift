@@ -3,13 +3,17 @@ import Cocoa
 class CategoriesViewController: NSViewController {
     @IBOutlet var outlineView: NSOutlineView!
     
+    var categoryAPIAdapter: CategoryAPIAdapter = CategoryAPIAdapter(parser: CategoryJSONParser())
+    var store = CategoryStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetcher = CategoryAPI.sharedInstance
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CategoriesViewController.CategoryDidCreated(_:)), name: CreateCategoryViewController.kCategoryDidCreatedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CategoriesViewController.CategoryDidDeleted(_:)), name: CategoriesBarViewController.kCategoryDeletedNotification, object: nil)
         
-        fetcher.allCategories {
-            (result) in
+        categoryAPIAdapter.get {
+            result in
             switch result {
             case let .Success(categories):
                 let store = CategoryStore.sharedInstance
@@ -22,6 +26,18 @@ class CategoriesViewController: NSViewController {
                 print("Got error: \(error)")
             }
         }
+    }
+    
+    func CategoryDidCreated(notification: NSNotification) {
+        outlineView.reloadData()
+    }
+    
+    func CategoryDidDeleted(notification: NSNotification) {
+        outlineView.reloadData()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
 
@@ -49,6 +65,14 @@ extension CategoriesViewController: NSOutlineViewDataSource {
 }
 
 extension CategoriesViewController: NSOutlineViewDelegate {
+    static var SelectedCategoryDidChangeNotification: String {
+        return "com.kivi.CategoriesViewController.SelectedCategoryDidChangeNotification"
+    }
+    
+    var notificationCenter: NSNotificationCenter {
+        return NSNotificationCenter.defaultCenter()
+    }
+    
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
         guard let view = outlineView.makeViewWithIdentifier("CategoryCell", owner: self) as? NSTableCellView else {
             return nil
@@ -64,5 +88,11 @@ extension CategoriesViewController: NSOutlineViewDelegate {
         
         textField.stringValue = category.name
         return view
+    }
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        let outlineView = notification.object as! NSOutlineView
+        
+        notificationCenter.postNotificationName(CategoriesViewController.SelectedCategoryDidChangeNotification, object: outlineView)
     }
 }

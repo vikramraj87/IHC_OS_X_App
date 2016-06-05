@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		AC0587891CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0587881CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift */; };
 		AC05878B1D000C7C00E9C3F5 /* WhiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05878A1D000C7C00E9C3F5 /* WhiteView.swift */; };
-		AC05878D1D00150100E9C3F5 /* CategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05878C1D00150100E9C3F5 /* CategoryAPI.swift */; };
 		AC05878F1D001A5E00E9C3F5 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05878E1D001A5E00E9C3F5 /* Category.swift */; };
 		AC0587911D0028E200E9C3F5 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0587901D0028E200E9C3F5 /* CategoriesViewController.swift */; };
 		AC10D1781D02BEA600F1DE4F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D1771D02BEA600F1DE4F /* JSONParser.swift */; };
 		AC10D17A1D02C36300F1DE4F /* CategoryJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D1791D02C36300F1DE4F /* CategoryJSONParser.swift */; };
+		AC10D17D1D02D33900F1DE4F /* APIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D17C1D02D33900F1DE4F /* APIAdapter.swift */; };
+		AC10D1811D02F48400F1DE4F /* CategoryAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D1801D02F48400F1DE4F /* CategoryAPIAdapter.swift */; };
+		AC10D1891D03530200F1DE4F /* CategoriesBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D1881D03530200F1DE4F /* CategoriesBarViewController.swift */; };
+		AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D18B1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift */; };
+		AC2E3E281D0438FB002E93AD /* IsNotEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E3E271D0438FB002E93AD /* IsNotEmptyTransformer.swift */; };
 		AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5640591CFDD35000AC4836 /* AppDelegate.swift */; };
-		AC56405C1CFDD35000AC4836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56405B1CFDD35000AC4836 /* ViewController.swift */; };
 		AC56405E1CFDD35000AC4836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC56405D1CFDD35000AC4836 /* Assets.xcassets */; };
 		AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC56405F1CFDD35000AC4836 /* Main.storyboard */; };
 		AC56406C1CFDD35000AC4836 /* IHC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */; };
-		ACB591551D01E2D3002A1EE2 /* CategoryTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB591541D01E2D3002A1EE2 /* CategoryTransformer.swift */; };
 		ACB5915B1D01FD13002A1EE2 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,21 +38,23 @@
 /* Begin PBXFileReference section */
 		AC0587881CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		AC05878A1D000C7C00E9C3F5 /* WhiteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteView.swift; sourceTree = "<group>"; };
-		AC05878C1D00150100E9C3F5 /* CategoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryAPI.swift; sourceTree = "<group>"; };
 		AC05878E1D001A5E00E9C3F5 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		AC0587901D0028E200E9C3F5 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		AC10D1771D02BEA600F1DE4F /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		AC10D1791D02C36300F1DE4F /* CategoryJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryJSONParser.swift; sourceTree = "<group>"; };
+		AC10D17C1D02D33900F1DE4F /* APIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAdapter.swift; sourceTree = "<group>"; };
+		AC10D1801D02F48400F1DE4F /* CategoryAPIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryAPIAdapter.swift; sourceTree = "<group>"; };
+		AC10D1881D03530200F1DE4F /* CategoriesBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesBarViewController.swift; sourceTree = "<group>"; };
+		AC10D18B1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsCategoryRemovableTransformer.swift; sourceTree = "<group>"; };
+		AC2E3E271D0438FB002E93AD /* IsNotEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsNotEmptyTransformer.swift; sourceTree = "<group>"; };
 		AC5640561CFDD35000AC4836 /* IHC App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IHC App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5640591CFDD35000AC4836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC56405B1CFDD35000AC4836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC56405D1CFDD35000AC4836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC5640601CFDD35000AC4836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC5640621CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC5640671CFDD35000AC4836 /* IHC AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IHC AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHC_AppTests.swift; sourceTree = "<group>"; };
 		AC56406D1CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB591541D01E2D3002A1EE2 /* CategoryTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTransformer.swift; sourceTree = "<group>"; };
 		ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +85,42 @@
 			name = JSONParsers;
 			sourceTree = "<group>";
 		};
+		AC10D17B1D02D29B00F1DE4F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AC10D17C1D02D33900F1DE4F /* APIAdapter.swift */,
+				AC10D1801D02F48400F1DE4F /* CategoryAPIAdapter.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		AC10D1841D03269400F1DE4F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AC0587901D0028E200E9C3F5 /* CategoriesViewController.swift */,
+				AC10D1881D03530200F1DE4F /* CategoriesBarViewController.swift */,
+				AC0587881CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AC10D1851D03270600F1DE4F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AC5640591CFDD35000AC4836 /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		AC10D18A1D0361DA00F1DE4F /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				AC10D18B1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift */,
+				AC2E3E271D0438FB002E93AD /* IsNotEmptyTransformer.swift */,
+			);
+			name = Transformers;
+			sourceTree = "<group>";
+		};
 		AC56404D1CFDD35000AC4836 = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +142,11 @@
 		AC5640581CFDD35000AC4836 /* IHC App */ = {
 			isa = PBXGroup;
 			children = (
+				AC10D18A1D0361DA00F1DE4F /* Transformers */,
+				AC10D1841D03269400F1DE4F /* ViewControllers */,
+				AC10D17B1D02D29B00F1DE4F /* API */,
 				AC10D1761D02BE7F00F1DE4F /* JSONParsers */,
-				AC5640591CFDD35000AC4836 /* AppDelegate.swift */,
-				AC56405B1CFDD35000AC4836 /* ViewController.swift */,
+				AC10D1851D03270600F1DE4F /* App */,
 				ACB591581D01FC98002A1EE2 /* Category */,
 				ACB591591D01FCA2002A1EE2 /* Resources */,
 			);
@@ -123,11 +165,7 @@
 		ACB591581D01FC98002A1EE2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				AC0587881CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift */,
-				AC0587901D0028E200E9C3F5 /* CategoriesViewController.swift */,
-				AC05878C1D00150100E9C3F5 /* CategoryAPI.swift */,
 				AC05878E1D001A5E00E9C3F5 /* Category.swift */,
-				ACB591541D01E2D3002A1EE2 /* CategoryTransformer.swift */,
 				ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */,
 			);
 			name = Category;
@@ -245,15 +283,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0587891CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift in Sources */,
+				AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */,
 				AC10D17A1D02C36300F1DE4F /* CategoryJSONParser.swift in Sources */,
-				AC56405C1CFDD35000AC4836 /* ViewController.swift in Sources */,
-				AC05878D1D00150100E9C3F5 /* CategoryAPI.swift in Sources */,
+				AC10D1811D02F48400F1DE4F /* CategoryAPIAdapter.swift in Sources */,
+				AC2E3E281D0438FB002E93AD /* IsNotEmptyTransformer.swift in Sources */,
 				AC05878B1D000C7C00E9C3F5 /* WhiteView.swift in Sources */,
 				ACB5915B1D01FD13002A1EE2 /* CategoryStore.swift in Sources */,
+				AC10D17D1D02D33900F1DE4F /* APIAdapter.swift in Sources */,
 				AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */,
 				AC10D1781D02BEA600F1DE4F /* JSONParser.swift in Sources */,
-				ACB591551D01E2D3002A1EE2 /* CategoryTransformer.swift in Sources */,
 				AC0587911D0028E200E9C3F5 /* CategoriesViewController.swift in Sources */,
+				AC10D1891D03530200F1DE4F /* CategoriesBarViewController.swift in Sources */,
 				AC05878F1D001A5E00E9C3F5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
