@@ -37,7 +37,6 @@ extension APIAdapter {
             
             guard res.statusCode == 200 || res.statusCode == 201 else {
                 callCompletionHandlerWithResult(.Failure(.BadStatusCode(res.statusCode)))
-//                print(try! NSJSONSerialization.JSONObjectWithData(data!, options: []))
                 return
             }
             

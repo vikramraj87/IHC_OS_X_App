@@ -1,22 +1,6 @@
 import Foundation
 
-//extension NSURLRequest {
-//    func cURLString() -> String {
-//        var retString = "curl -k --dump-header - --request \(HTTPMethod!)\n"
-//        for (key, value) in allHTTPHeaderFields! {
-//            retString.appendContentsOf(" -H \(key): \(value)\n")
-//        }
-//        
-//        if let bodyDataString = String(data: HTTPBody!, encoding: NSUTF8StringEncoding) {
-//            retString.appendContentsOf(" --data \(bodyDataString)")
-//        }
-//        
-//        retString.appendContentsOf(" '\(URL!.absoluteString)'")
-//        return retString
-//    }
-//}
-
-struct CategoryAPIAdapter: APIAdapter {
+class CategoryAPIAdapter: NSObject, APIAdapter {
     // MARK: - Nested types
     enum Error: ErrorType {
         case APIError(APIAdapterError)
@@ -28,10 +12,21 @@ struct CategoryAPIAdapter: APIAdapter {
         case Failure(Error)
     }
     
-    
     // MARK: - Properties
     let parser: CategoryJSONParser
     private let baseURLString = "http://ihcapp.dev/categories"
+    
+    let session: NSURLSession = {
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        config.HTTPAdditionalHeaders = [
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        ]
+        return NSURLSession(configuration: config)
+    }()
+    
+    // For Async Progress Indicator
+    dynamic var numberOfLiveContacts = 0
     
     // MARK: - Initializer
     init(parser: CategoryJSONParser) {
@@ -39,91 +34,74 @@ struct CategoryAPIAdapter: APIAdapter {
     }
     
     // MARK: - Methods
-    func get(completionHandler: (Result) -> Void) {
+    func getAll(completionHandler: (Result) -> Void) {
         let url = NSURL(string: baseURLString)!
         let request = NSURLRequest(URL: url)
         
-        let session: NSURLSession = {
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            return NSURLSession(configuration: config)
-        }()
-        
-        makeRequest(request, usingSession: session) {
-            result in
-            switch result {
-            case let .Failure(apiError):
-                completionHandler(.Failure(.APIError(apiError)))
-            case let .Success(data):
-                do {
-                    let categories = try self.parser.parseData(data)
-                    completionHandler(.Success(categories))
-                } catch let error {
-                    completionHandler(.Failure(.ParserError(error as! JSONParserError)))
-                }
-            }
-        }
+        makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func create(name: String, parentCategoryId: Int, completionHandler: (Result) -> Void) {
-        let session: NSURLSession = {
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            config.HTTPAdditionalHeaders = [
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            ]
-            return NSURLSession(configuration: config)
-        }()
-        
+    func createCategoryWithName(name: String, parentCategoryId: Int, completionHandler: (Result) -> Void) {
         let url = NSURL(string: "\(baseURLString)/\(parentCategoryId)")!
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
         
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.HTTPMethod = "POST"
         
         let dataDict: NSDictionary = ["name": name]
         let data: NSData = try! NSJSONSerialization.dataWithJSONObject(dataDict, options: [])
         request.HTTPBody = data
-        makeRequest(request, usingSession: session) {
-            result in
-            switch result {
-            case let .Failure(apiError):
-                completionHandler(.Failure(.APIError(apiError)))
-            case let .Success(data):
-                do {
-                    let categories = try self.parser.parseData(data)
-                    completionHandler(.Success(categories))
-                } catch let error {
-                    completionHandler(.Failure(.ParserError(error as! JSONParserError)))
-                }
-            }
-        }
+        
+        makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func delete(categoryId: Int, completionHandler: (Result) -> Void) {
-        let session: NSURLSession = {
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            config.HTTPAdditionalHeaders = [
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            ]
-            return NSURLSession(configuration: config)
-        }()
+    func moveCategoryWithId(categoryId: Int, underParentCategoryWithId parentId: Int, completionHandler: (Result) -> Void) {
+        let url = NSURL(string: "\(baseURLString)/\(categoryId)/parent/\(parentId)")!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "PATCH"
         
+        makeRequest(request, withCompletionHandler: completionHandler)
+    }
+    
+    func deleteCategoryWithId(categoryId: Int, completionHandler: (Result) -> Void) {
         let url = NSURL(string: "\(baseURLString)/\(categoryId)")!
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "DELETE"
         
+        makeRequest(request, withCompletionHandler: completionHandler)
+    }
+    
+    func renameCategoryWithId(categoryId: Int, withName name: String, completionHandler: (Result) -> Void) {
+        let encodedName = name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+        let url = NSURL(string: "\(baseURLString)/\(categoryId)/name/\(encodedName)")!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "PATCH"
+        
+        
+        makeRequest(request, withCompletionHandler: completionHandler)
+    }
+    
+    // MARK: - Helpers
+    private func makeRequest(request: NSURLRequest, withCompletionHandler handler: (Result) -> Void) {
+        numberOfLiveContacts += 1
         makeRequest(request, usingSession: session) {
             result in
             switch result {
             case let .Failure(apiError):
-                completionHandler(.Failure(.APIError(apiError)))
+                handler(.Failure(.APIError(apiError)))
             case let .Success(data):
                 do {
                     let categories = try self.parser.parseData(data)
-                    completionHandler(.Success(categories))
+                    handler(.Success(categories))
                 } catch let error {
-                    completionHandler(.Failure(.ParserError(error as! JSONParserError)))
+                    handler(.Failure(.ParserError(error as! JSONParserError)))
                 }
+            }
+            
+            // TODO: Number of live contacts never goes to 0 rarely
+            // Find a way to mark timeout
+            if self.numberOfLiveContacts > 0 {
+                self.numberOfLiveContacts -= 1
             }
         }
     }

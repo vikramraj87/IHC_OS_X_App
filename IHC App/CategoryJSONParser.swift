@@ -33,17 +33,14 @@ struct CategoryJSONParser: JSONParser {
         let category = Category(id: id, name: name, parent: parentCategory, createdAt: createdAt, updatedAt: updatedAt)
         
         // Create subcategories
-        var subcategories = [Category]()
         if let subcategoriesDict = categoryDict["subcategories"] as? [NSDictionary] {
             for subcategoryDict in subcategoriesDict {
                 if let subcategory = categoryFromDictionary(subcategoryDict, parentCategory: category) {
-                    subcategories.append(subcategory)
+                    category.addSubcategory(subcategory)
                 }
             }
         }
         
-        // Set subcategories for category
-        category.subcategories = subcategories
         return category
     }
 }
