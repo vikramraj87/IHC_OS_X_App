@@ -1,5 +1,6 @@
 import Foundation
 
+/// API Adapter for Category API calls
 class CategoryAPIAdapter: NSObject, APIAdapter {
     // MARK: - Nested types
     enum Error: ErrorType {

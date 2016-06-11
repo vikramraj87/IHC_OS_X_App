@@ -1,5 +1,6 @@
 import Foundation
 
+/// Parses JSON data to Category
 struct CategoryJSONParser: JSONParser {
     /// Date formatter to parse the timestamps
     let dateFormatter: NSDateFormatter = {
@@ -23,10 +24,10 @@ struct CategoryJSONParser: JSONParser {
  
          - Parameter categoryDict: NSDictionary containing the data for object.
          - Parameter parentCategory: Optional category object as parameter.
-         - Returns: Category if successful, else `nil`.
+         - Returns: `Category` if successful, else `nil`.
      */
     private func categoryFromDictionary(categoryDict: NSDictionary, parentCategory: Category?) -> Category? {
-        // Check whether keys for dictionary exist
+        // Check whether the dictionary contains all the keys
         guard let id = categoryDict["id"] as? Int,
             let name = categoryDict["name"] as? String,
             let createdAtString = categoryDict["created_at"] as? String,
