@@ -1,6 +1,6 @@
 import Foundation
 
-struct DiagnosisJSONParser: JSONParser {
+struct DiagnosisJSONParser {
     /// Date formatter to parse the timestamps
     let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -10,9 +10,9 @@ struct DiagnosisJSONParser: JSONParser {
     
     
     // MARK: - Conformance to JSONParser
-    typealias ObjectType = Diagnosis
+//    typealias ObjectType = Diagnosis
     
-    func objectFromDictionary(dictionary: NSDictionary) -> Diagnosis? {
-        return Diagnosis()
-    }
+//    func objectFromDictionary(dictionary: NSDictionary) -> Diagnosis? {
+//        return Diagnosis(id: nil, name: "", category: Category(), createdAt: nil, updatedAt: nil)
+//    }
 }

@@ -1,29 +1,39 @@
 import Cocoa
 
+/// Category
 class Category: NSObject {
-    // Id will be nil when a new category is created and not
-    // reached the API server
+    /// ID of the category. Nil when a new category is created and not sent
+    /// to the server
     let id: Int?
     
+    /// Name of the category
     dynamic var name: String
+    
+    /// Subcategories
     private var _subcategories: [Category] = []
     
-    // parent is null when the category is a top level category
+    /// parent is nil when the category is a top level category
     weak var parent: Category?
     
-    // subcategories is an empty array when a category does
-    // not have subcategories
+    /// getter for _subcategories
     var subcategories: [Category] {
         return _subcategories
     }
     
+    /// Created at timestamp
     let createdAt: NSDate?
+    
+    /// Updated at timestamp
     let updatedAt: NSDate?
     
+    /// Returns true if the category has subcategories, useful for determinig
+    /// whether the node is a branch or leaf in outline view. Also it
+    /// prevents the category from removed if it has subcateogories
     var hasSubcategories: Bool {
         return subcategories.count > 0
     }
     
+    /// Returns the number of categories.
     var numberOfSubcategories: Int {
         return subcategories.count
     }
