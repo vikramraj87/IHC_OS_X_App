@@ -18,6 +18,8 @@
 		AC10D1891D03530200F1DE4F /* CategoriesBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D1881D03530200F1DE4F /* CategoriesBarViewController.swift */; };
 		AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC10D18B1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift */; };
 		AC2E3E281D0438FB002E93AD /* IsNotEmptyTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E3E271D0438FB002E93AD /* IsNotEmptyTransformer.swift */; };
+		AC47FA8C1D0C0FCA00222267 /* DiagnosisJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47FA8B1D0C0FCA00222267 /* DiagnosisJSONParser.swift */; };
+		AC47FA901D0C32C300222267 /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC47FA8F1D0C32C300222267 /* Diagnosis.swift */; };
 		AC5614B81D05D4A9008CE7B8 /* CategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5614B71D05D4A9008CE7B8 /* CategoryTests.swift */; };
 		AC5614B91D05D638008CE7B8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05878E1D001A5E00E9C3F5 /* Category.swift */; };
 		AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5640591CFDD35000AC4836 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		AC10D1881D03530200F1DE4F /* CategoriesBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesBarViewController.swift; sourceTree = "<group>"; };
 		AC10D18B1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsCategoryRemovableTransformer.swift; sourceTree = "<group>"; };
 		AC2E3E271D0438FB002E93AD /* IsNotEmptyTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsNotEmptyTransformer.swift; sourceTree = "<group>"; };
+		AC47FA8B1D0C0FCA00222267 /* DiagnosisJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisJSONParser.swift; sourceTree = "<group>"; };
+		AC47FA8F1D0C32C300222267 /* Diagnosis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		AC5614B71D05D4A9008CE7B8 /* CategoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTests.swift; sourceTree = "<group>"; };
 		AC5640561CFDD35000AC4836 /* IHC App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IHC App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5640591CFDD35000AC4836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			children = (
 				AC10D1771D02BEA600F1DE4F /* JSONParser.swift */,
 				AC10D1791D02C36300F1DE4F /* CategoryJSONParser.swift */,
+				AC47FA8B1D0C0FCA00222267 /* DiagnosisJSONParser.swift */,
 			);
 			name = JSONParsers;
 			sourceTree = "<group>";
@@ -122,6 +127,23 @@
 			name = Transformers;
 			sourceTree = "<group>";
 		};
+		AC47FA8D1D0C32A500222267 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC47FA8E1D0C32AE00222267 /* Diagnosis */,
+				ACB591581D01FC98002A1EE2 /* Category */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AC47FA8E1D0C32AE00222267 /* Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				AC47FA8F1D0C32C300222267 /* Diagnosis.swift */,
+			);
+			name = Diagnosis;
+			sourceTree = "<group>";
+		};
 		AC56404D1CFDD35000AC4836 = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +170,7 @@
 				AC10D17B1D02D29B00F1DE4F /* API */,
 				AC10D1761D02BE7F00F1DE4F /* JSONParsers */,
 				AC10D1851D03270600F1DE4F /* App */,
-				ACB591581D01FC98002A1EE2 /* Category */,
+				AC47FA8D1D0C32A500222267 /* Models */,
 				ACB591591D01FCA2002A1EE2 /* Resources */,
 			);
 			path = "IHC App";
@@ -294,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC47FA8C1D0C0FCA00222267 /* DiagnosisJSONParser.swift in Sources */,
 				AC0587891CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift in Sources */,
 				AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */,
 				AC10D17A1D02C36300F1DE4F /* CategoryJSONParser.swift in Sources */,
@@ -305,6 +328,7 @@
 				AC56405A1CFDD35000AC4836 /* AppDelegate.swift in Sources */,
 				AC10D1781D02BEA600F1DE4F /* JSONParser.swift in Sources */,
 				AC0587911D0028E200E9C3F5 /* CategoriesViewController.swift in Sources */,
+				AC47FA901D0C32C300222267 /* Diagnosis.swift in Sources */,
 				AC10D1891D03530200F1DE4F /* CategoriesBarViewController.swift in Sources */,
 				AC05878F1D001A5E00E9C3F5 /* Category.swift in Sources */,
 			);

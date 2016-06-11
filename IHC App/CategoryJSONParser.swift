@@ -1,6 +1,7 @@
 import Foundation
 
 struct CategoryJSONParser: JSONParser {
+    /// Date formatter to parse the timestamps
     let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -15,9 +16,15 @@ struct CategoryJSONParser: JSONParser {
     }
     
     // MARK: - Helpers
-    // Creates category from NSDictionary
-    // Recursive function
-    // Returns nil if the data cannot be parsed to Category
+    
+    /**
+        Creates Category object from NSDictionary. Recursive function
+        creates subcategories else well.
+ 
+         - Parameter categoryDict: NSDictionary containing the data for object.
+         - Parameter parentCategory: Optional category object as parameter.
+         - Returns: Category if successful, else `nil`.
+     */
     private func categoryFromDictionary(categoryDict: NSDictionary, parentCategory: Category?) -> Category? {
         // Check whether keys for dictionary exist
         guard let id = categoryDict["id"] as? Int,
