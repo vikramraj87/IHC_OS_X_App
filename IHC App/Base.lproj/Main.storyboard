@@ -732,10 +732,10 @@
             </objects>
             <point key="canvasLocation" x="691" y="780"/>
         </scene>
-        <!--View Controller-->
+        <!--Diagnosis Table View Controller-->
         <scene sceneID="EXj-cr-v3L">
             <objects>
-                <viewController id="Mru-mT-lcK" sceneMemberID="viewController">
+                <viewController id="Mru-mT-lcK" customClass="DiagnosisTableViewController" customModule="IHC_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Duj-vj-5PN">
                         <rect key="frame" x="0.0" y="0.0" width="338" height="486"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -770,15 +770,22 @@
                                                             <rect key="frame" x="1" y="1" width="335" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-OX-Fdp">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzq-OX-Fdp">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="lig-WI-yXC">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="Img-nC-duA" name="value" keyPath="objectValue.name" id="5lN-Vv-ndO"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="Hzq-OX-Fdp" secondAttribute="trailing" constant="2" id="Gsr-3V-hfy"/>
+                                                                <constraint firstItem="Hzq-OX-Fdp" firstAttribute="leading" secondItem="Img-nC-duA" secondAttribute="leading" constant="2" id="SOu-ts-2xp"/>
+                                                            </constraints>
                                                             <connections>
                                                                 <outlet property="textField" destination="Hzq-OX-Fdp" id="O1Y-iU-wtm"/>
                                                             </connections>
@@ -786,6 +793,9 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Mru-mT-lcK" id="M0o-1G-tXw"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -814,6 +824,9 @@
                             <constraint firstAttribute="trailing" secondItem="Stt-i0-8ku" secondAttribute="trailing" id="twM-cN-H4f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8yX-RK-EiV" id="ToM-yw-7oi"/>
+                    </connections>
                 </viewController>
                 <customObject id="c5O-t5-7jc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

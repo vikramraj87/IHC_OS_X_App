@@ -32,6 +32,8 @@
 		AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC56405F1CFDD35000AC4836 /* Main.storyboard */; };
 		AC56406C1CFDD35000AC4836 /* IHC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */; };
 		AC7D8EC81D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */; };
+		AC7D8ECA1D0D318E0042AD08 /* DiagnosisStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8EC91D0D318E0042AD08 /* DiagnosisStore.swift */; };
+		AC7D8ECD1D0D35030042AD08 /* DiagnosisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */; };
 		ACB5915B1D01FD13002A1EE2 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHC_AppTests.swift; sourceTree = "<group>"; };
 		AC56406D1CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisAPIAdapter.swift; sourceTree = "<group>"; };
+		AC7D8EC91D0D318E0042AD08 /* DiagnosisStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisStore.swift; sourceTree = "<group>"; };
+		AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisTableViewController.swift; sourceTree = "<group>"; };
 		ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 		AC10D1841D03269400F1DE4F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC7D8ECB1D0D34D50042AD08 /* Diagnosis */,
 				AC8020371D093DFB003D2EB9 /* Category */,
 			);
 			name = ViewControllers;
@@ -152,6 +157,7 @@
 			children = (
 				AC47FA8F1D0C32C300222267 /* Diagnosis.swift */,
 				AC47FA911D0C387400222267 /* ICDOCode.swift */,
+				AC7D8EC91D0D318E0042AD08 /* DiagnosisStore.swift */,
 			);
 			name = Diagnosis;
 			sourceTree = "<group>";
@@ -230,6 +236,14 @@
 				AC47FA981D0C61BA00222267 /* Models */,
 			);
 			path = "IHC AppTests";
+			sourceTree = "<group>";
+		};
+		AC7D8ECB1D0D34D50042AD08 /* Diagnosis */ = {
+			isa = PBXGroup;
+			children = (
+				AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */,
+			);
+			name = Diagnosis;
 			sourceTree = "<group>";
 		};
 		AC8020371D093DFB003D2EB9 /* Category */ = {
@@ -379,6 +393,8 @@
 				AC0587911D0028E200E9C3F5 /* CategoriesViewController.swift in Sources */,
 				AC47FA901D0C32C300222267 /* Diagnosis.swift in Sources */,
 				AC10D1891D03530200F1DE4F /* CategoriesBarViewController.swift in Sources */,
+				AC7D8ECD1D0D35030042AD08 /* DiagnosisTableViewController.swift in Sources */,
+				AC7D8ECA1D0D318E0042AD08 /* DiagnosisStore.swift in Sources */,
 				AC05878F1D001A5E00E9C3F5 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

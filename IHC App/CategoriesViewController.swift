@@ -10,7 +10,7 @@ class CategoriesViewController: NSViewController {
     @IBOutlet var outlineView: NSOutlineView!
     
     /// Singleton instance of CategoryStore, data container for outline view
-    var store = CategoryStore.sharedInstance
+    let store = CategoryStore.sharedInstance
     
     /// Number of server contacts made by CategoryAPIAdapter
     dynamic var numberOfLiveContacts: Int = 0
