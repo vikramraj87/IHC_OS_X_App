@@ -1,6 +1,6 @@
 import Foundation
 
-class ICDOCode: NSObject {
+class ICDOCode: NSObject, NSCopying {
     /// Corresponds to morphology of the tumor
     var morphologyCode: Int
     
@@ -22,5 +22,9 @@ class ICDOCode: NSObject {
         self.behaviorCode = behaviorCode
         
         super.init()
+    }
+    
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        return ICDOCode(morphologyCode: morphologyCode, behaviorCode: behaviorCode)
     }
 }

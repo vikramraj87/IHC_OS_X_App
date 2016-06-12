@@ -34,6 +34,10 @@
 		AC7D8EC81D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */; };
 		AC7D8ECA1D0D318E0042AD08 /* DiagnosisStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8EC91D0D318E0042AD08 /* DiagnosisStore.swift */; };
 		AC7D8ECD1D0D35030042AD08 /* DiagnosisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */; };
+		AC7D8ED31D0D69250042AD08 /* DiagnosisBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8ED21D0D69250042AD08 /* DiagnosisBarViewController.swift */; };
+		AC7D8ED71D0DA75E0042AD08 /* CreateDiagnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8ED61D0DA75E0042AD08 /* CreateDiagnosisViewController.swift */; };
+		AC7D8EDC1D0DE1310042AD08 /* Category.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7D8EDB1D0DE1310042AD08 /* Category.storyboard */; };
+		AC7D8EDF1D0DE1B90042AD08 /* Diagnosis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7D8EDD1D0DE1B90042AD08 /* Diagnosis.storyboard */; };
 		ACB5915B1D01FD13002A1EE2 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,10 @@
 		AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisAPIAdapter.swift; sourceTree = "<group>"; };
 		AC7D8EC91D0D318E0042AD08 /* DiagnosisStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisStore.swift; sourceTree = "<group>"; };
 		AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisTableViewController.swift; sourceTree = "<group>"; };
+		AC7D8ED21D0D69250042AD08 /* DiagnosisBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisBarViewController.swift; sourceTree = "<group>"; };
+		AC7D8ED61D0DA75E0042AD08 /* CreateDiagnosisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDiagnosisViewController.swift; sourceTree = "<group>"; };
+		AC7D8EDB1D0DE1310042AD08 /* Category.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Category.storyboard; sourceTree = "<group>"; };
+		AC7D8EDE1D0DE1B90042AD08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Diagnosis.storyboard; sourceTree = "<group>"; };
 		ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				AC7D8ECC1D0D35030042AD08 /* DiagnosisTableViewController.swift */,
+				AC7D8ED21D0D69250042AD08 /* DiagnosisBarViewController.swift */,
+				AC7D8ED61D0DA75E0042AD08 /* CreateDiagnosisViewController.swift */,
 			);
 			name = Diagnosis;
 			sourceTree = "<group>";
@@ -269,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				AC56405F1CFDD35000AC4836 /* Main.storyboard */,
+				AC7D8EDD1D0DE1B90042AD08 /* Diagnosis.storyboard */,
+				AC7D8EDB1D0DE1310042AD08 /* Category.storyboard */,
 				AC5640621CFDD35000AC4836 /* Info.plist */,
 				AC56405D1CFDD35000AC4836 /* Assets.xcassets */,
 				AC05878A1D000C7C00E9C3F5 /* WhiteView.swift */,
@@ -357,6 +369,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7D8EDF1D0DE1B90042AD08 /* Diagnosis.storyboard in Resources */,
+				AC7D8EDC1D0DE1310042AD08 /* Category.storyboard in Resources */,
 				AC56405E1CFDD35000AC4836 /* Assets.xcassets in Resources */,
 				AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */,
 			);
@@ -378,9 +392,11 @@
 			files = (
 				AC47FA8C1D0C0FCA00222267 /* DiagnosisJSONParser.swift in Sources */,
 				AC47FA951D0C611B00222267 /* ICDOCodeFormatter.swift in Sources */,
+				AC7D8ED31D0D69250042AD08 /* DiagnosisBarViewController.swift in Sources */,
 				AC0587891CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift in Sources */,
 				AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */,
 				AC7D8EC81D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift in Sources */,
+				AC7D8ED71D0DA75E0042AD08 /* CreateDiagnosisViewController.swift in Sources */,
 				AC47FA921D0C387400222267 /* ICDOCode.swift in Sources */,
 				AC10D17A1D02C36300F1DE4F /* CategoryJSONParser.swift in Sources */,
 				AC10D1811D02F48400F1DE4F /* CategoryAPIAdapter.swift in Sources */,
@@ -429,6 +445,14 @@
 				AC5640601CFDD35000AC4836 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC7D8EDD1D0DE1B90042AD08 /* Diagnosis.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC7D8EDE1D0DE1B90042AD08 /* Base */,
+			);
+			name = Diagnosis.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -53,7 +53,6 @@ class DiagnosisStore: NSObject {
                     }
                     self.diagnoses[categoryId]!.append(diagnosis)
                 }
-                print(self.diagnoses)
             case let .Failure(error):
                 print("Got error: \(error)")
             }
@@ -84,7 +83,6 @@ class DiagnosisStore: NSObject {
         }
         
         getSubcategoriesIdForCategory(category, categoryIds: &categoryIds)
-        print(categoryIds)
         
         var retDiagnoses = [Diagnosis]()
         for categoryId in categoryIds {

@@ -63,7 +63,10 @@ class ICDOCodeFormatter: NSFormatter {
         let range = NSRange(location: 0, length: string.characters.count)
         
         guard let result = regex.firstMatchInString(string, options: [], range: range) else {
-            error.memory = "Invalid icd-o code provided."
+            if error != nil {
+                let errorString = "Invalid icd-o code provided."
+                error.memory = errorString as NSString
+            }
             return false
         }
         
