@@ -2,17 +2,6 @@ import Foundation
 
 /// API Adapter for Category API calls
 class CategoryAPIAdapter: NSObject, APIAdapter {
-    // MARK: - Nested types
-    enum Error: ErrorType {
-        case APIError(APIAdapterError)
-        case ParserError(JSONParserError)
-    }
-    
-    enum Result {
-        case Success([Category])
-        case Failure(Error)
-    }
-    
     // MARK: - Properties
     let parser: CategoryJSONParser
     private let baseURLString = "http://ihcapp.dev/categories"
@@ -26,7 +15,7 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
         return NSURLSession(configuration: config)
     }()
     
-    // For Async Progress Indicator
+    /// For Async Progress Indicator
     dynamic var numberOfLiveContacts = 0
     
     // MARK: - Initializer
@@ -35,14 +24,14 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
     }
     
     // MARK: - Methods
-    func getAll(completionHandler: (Result) -> Void) {
+    func getAll(completionHandler: (AdapterResult<Category>) -> Void) {
         let url = NSURL(string: baseURLString)!
         let request = NSURLRequest(URL: url)
         
         makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func createCategoryWithName(name: String, parentCategoryId: Int, completionHandler: (Result) -> Void) {
+    func createCategoryWithName(name: String, parentCategoryId: Int, completionHandler: (AdapterResult<Category>) -> Void) {
         let url = NSURL(string: "\(baseURLString)/\(parentCategoryId)")!
         
         let request = NSMutableURLRequest(URL: url)
@@ -56,7 +45,7 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
         makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func moveCategoryWithId(categoryId: Int, underParentCategoryWithId parentId: Int, completionHandler: (Result) -> Void) {
+    func moveCategoryWithId(categoryId: Int, underParentCategoryWithId parentId: Int, completionHandler: (AdapterResult<Category>) -> Void) {
         let url = NSURL(string: "\(baseURLString)/\(categoryId)/parent/\(parentId)")!
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "PATCH"
@@ -64,7 +53,7 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
         makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func deleteCategoryWithId(categoryId: Int, completionHandler: (Result) -> Void) {
+    func deleteCategoryWithId(categoryId: Int, completionHandler: (AdapterResult<Category>) -> Void) {
         let url = NSURL(string: "\(baseURLString)/\(categoryId)")!
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "DELETE"
@@ -72,7 +61,7 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
         makeRequest(request, withCompletionHandler: completionHandler)
     }
     
-    func renameCategoryWithId(categoryId: Int, withName name: String, completionHandler: (Result) -> Void) {
+    func renameCategoryWithId(categoryId: Int, withName name: String, completionHandler: (AdapterResult<Category>) -> Void) {
         let encodedName = name.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
         let url = NSURL(string: "\(baseURLString)/\(categoryId)/name/\(encodedName)")!
         let request = NSMutableURLRequest(URL: url)
@@ -83,13 +72,21 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
     }
     
     // MARK: - Helpers
-    private func makeRequest(request: NSURLRequest, withCompletionHandler handler: (Result) -> Void) {
+    
+    /**
+     Makes request to the server and calls the completion handler when responded.
+     - Parameter request: NSURLRequest containing the URL, method, etc
+     - Parameter handler: Completion hanlder that will be called when responded
+     */
+    private func makeRequest(request: NSURLRequest, withCompletionHandler handler: (AdapterResult<Category>) -> Void) {
+        // Increase the count of live contacts
         numberOfLiveContacts += 1
+        
         makeRequest(request, usingSession: session) {
             result in
             switch result {
             case let .Failure(apiError):
-                handler(.Failure(.APIError(apiError)))
+                handler(.Failure(.APIContactError(apiError)))
             case let .Success(data):
                 do {
                     let categories = try self.parser.parseData(data)
@@ -99,8 +96,7 @@ class CategoryAPIAdapter: NSObject, APIAdapter {
                 }
             }
             
-            // TODO: Number of live contacts never goes to 0 rarely
-            // Find a way to mark timeout
+            // Decrease the count of live contacts
             if self.numberOfLiveContacts > 0 {
                 self.numberOfLiveContacts -= 1
             }

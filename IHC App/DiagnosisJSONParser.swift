@@ -1,7 +1,7 @@
 import Foundation
 
 /// Parses JSON data to Diagnosis
-struct DiagnosisJSONParser {
+struct DiagnosisJSONParser: JSONParser {
     /// Date formatter to parse the timestamps
     let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()

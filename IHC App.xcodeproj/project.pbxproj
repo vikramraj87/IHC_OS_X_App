@@ -31,6 +31,7 @@
 		AC56405E1CFDD35000AC4836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC56405D1CFDD35000AC4836 /* Assets.xcassets */; };
 		AC5640611CFDD35000AC4836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC56405F1CFDD35000AC4836 /* Main.storyboard */; };
 		AC56406C1CFDD35000AC4836 /* IHC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */; };
+		AC7D8EC81D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */; };
 		ACB5915B1D01FD13002A1EE2 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		AC5640671CFDD35000AC4836 /* IHC AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IHC AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC56406B1CFDD35000AC4836 /* IHC_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IHC_AppTests.swift; sourceTree = "<group>"; };
 		AC56406D1CFDD35000AC4836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosisAPIAdapter.swift; sourceTree = "<group>"; };
 		ACB5915A1D01FD13002A1EE2 /* CategoryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 			children = (
 				AC10D17C1D02D33900F1DE4F /* APIAdapter.swift */,
 				AC10D1801D02F48400F1DE4F /* CategoryAPIAdapter.swift */,
+				AC7D8EC71D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				AC47FA951D0C611B00222267 /* ICDOCodeFormatter.swift in Sources */,
 				AC0587891CFFFEBC00E9C3F5 /* CreateCategoryViewController.swift in Sources */,
 				AC10D18C1D0361FF00F1DE4F /* IsCategoryRemovableTransformer.swift in Sources */,
+				AC7D8EC81D0D2E0F0042AD08 /* DiagnosisAPIAdapter.swift in Sources */,
 				AC47FA921D0C387400222267 /* ICDOCode.swift in Sources */,
 				AC10D17A1D02C36300F1DE4F /* CategoryJSONParser.swift in Sources */,
 				AC10D1811D02F48400F1DE4F /* CategoryAPIAdapter.swift in Sources */,
